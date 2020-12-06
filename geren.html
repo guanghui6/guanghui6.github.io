@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>个人网站</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.header {
+				width: 100%;
+				height: 100px;
+				border: 1px solid #00FFFF;
+				background-image: url(1.jpg);
+
+			}
+
+			.header>.daohanglan {
+				margin-top: 60px;
+				width: 100%;
+				height: 40px;
+				list-style: none;
+				color: #FFFFFF;
+				background-color: black;
+
+			}
+
+			.header>.daohanglan>li {
+				float: left;
+				line-height: 40px;
+				margin-left: 30px;
+			}
+
+			.header>.daohanglan>li>a {
+				text-decoration: none;
+				color: aliceblue;
+			}
+
+			.header>.daohanglan>li>a:hover {
+				color: #DC143C;
+
+
+			}
+			
+			.article{
+				width: 1500px;
+				height: 800px;
+			
+				margin: 0 auto;
+			}
+
+			.article>.article-1 {
+				float: left;
+				width: 300px;
+				height: 800px;
+			
+			}
+
+			.article>.article-1>.p {
+				width: 300px;
+				height: 800px;
+				color: #DC143C;
+				font-size: 30px;
+				font-family: "华文行楷";
+			}
+
+			.article>.article-1>img {
+				width: 150px;
+				height: 150px;
+				margin-left: 50px;
+				border-radius: 50%;
+			}
+
+			.article>.article-2{
+				width: 800px;
+				height: 500px;
+						
+			}
+			 .article>.article-2>.article-2-1 {
+				width: 1000px;
+				height: 100px;
+				margin-left: 600px;
+				margin-top: 70px;
+				color: #DC143C;
+				font-family: "华文行楷";
+				font-size: 35px;
+				
+			}
+
+			.ul1 {
+				list-style: none;
+				width: 900px;
+				height: 500px;
+				position: relative;
+				left: 500px;
+				top: -700px;
+			}
+
+			.ul1>.li1 {
+				display: none;
+			}
+
+			.ul1>.li1>img {
+				width: 900px;
+				height: 500px;
+			}
+
+			.ul2 {
+				list-style: none;
+				position: relative;
+				left: 400px;
+				top: -100px;
+			}
+
+			.ul2>.li2 {
+				float: left;
+				width: 20px;
+				height: 20px;
+				border: 1px solid #00FFFF;
+				margin-left: 30px;
+				border-radius: 50%;
+			}
+
+			.ul1>.cur {
+				display: block;
+			}
+
+			.ul2>.cur {
+				background-color: #DC143C;
+			}
+
+			.footer {
+				width: 800px;
+				height: 400px;
+				font-family: "华文行楷";
+				font-size: 30px;
+				margin: 0 350px;
+				color: #00FFFF;
+			}
+
+			.h1 {
+				font-size: 60px;
+				font-family: "华文行楷";
+				width: 800px;
+				height: 400px;
+				margin: 0 500px;
+			}
+			.footer{
+				font-size: 20px;
+				text-align: center;
+				color: black;
+				
+				
+			}
+			hr{
+				width: 100%;
+			}
+			body{
+				background-image: url(gg.gif);
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			var   msg=" ❤❤----欢迎光临个人网站------❤❤";//浏览框字体跳转
+								var   interval=500;
+								var  seq=0;
+							function statuShow(){
+								var len=msg.length;
+								document.title=msg.substring(seq,len)+msg.substring(0,seq);
+								seq++;
+							if(seq>=len){
+								seq=0;
+								
+								
+							}
+								window.setTimeout("statuShow();",interval)
+							}
+					statuShow();
+			
+			//轮播图的跳转
+			var image = document.getElementsByClassName("li1");
+			var circle = document.getElementsByClassName("li2");
+
+			var index = 0;
+			var timer = window.setInterval(show, 1000);
+
+			function show() {
+				for (var i = 0; i < circle.length; i++) {
+					if (i == index) {
+						image[i].classList.add("cur");
+						circle[i].classList.add("cur");
+
+					} else {
+						image[i].classList.remove("cur");
+						circle[i].classList.remove("cur");
+					}
+
+				}
+				index++;
+				if (index == circle.length) {
+					index = 0
+				}
+				
+			}
+
+			window.onload = function() {
+				for (var i = 0; i < circle.length; i++) {
+					circle[i].onmouseover = function() {
+						window.clearInterval(timer);
+						for (var i = 0; i < circle.length; i++) {
+							if (circle[i] == this) {
+								image[i].classList.add("cur");
+								circle[i].classList.add("cur");
+								index = i;
+							} else {
+								image[i].classList.remove("cur");
+								circle[i].classList.remove("cur");
+							}
+						}
+					}
+					circle[i].onmouseout = function() {
+						timer = window.setInterval(show, 1000);
+					}
+
+				}
+			
+			var ig=document.getElementById("ig");
+			
+			ig.onmouseover=function(){
+				ig.src="image/999.jpg";
+			}
+			ig.onmouseout=function(){
+				ig.src="image/666.jpg";
+				
+			}
+			
+			var  tm=document.getElementById("time");//访问时间
+			window.setInterval(ss,1000);
+			function ss(){
+			var  time=new Date();
+			var  t=time.toLocaleString();
+			tm.innerHTML="访问时间："+t;
+			}
+			
+			
+			var cishu=document.getElementById("cishu");//访问人数
+			var count = 0;
+				if (window.localStorage.getItem("count")) {
+					count = parseInt(window.localStorage.getItem("count"));
+				}
+				count++;
+				cishu.innerHTML = count;
+				window.localStorage.setItem("count", count);
+				
+				
+				
+				
+					
+			}
+			
+			
+			
+			
+		</script>
+		<div class="header">
+			<ul class="daohanglan">
+				<li><a href="geren.html">首页</a></li>
+				<li><a href="http://www.hnjmxy.cn/">我的大学</a></li>
+				<li><a href="sheyou.html">我的室友</a></li>
+				<li><a href="xinqing.html">我的心情</a></li>
+				<li><a href="index.html">好玩特效</a></li>
+			</ul>
+		</div>
+		
+		<div class="article">
+			<div  class="article-1">
+				<img src="image/666.jpg" id="ig"><br>
+				<p class="p">
+					姓名：杨光辉 <br>
+					性别：男<br>
+					年龄：21<br>
+					星座 ：双子座<br>
+					爱好：唱歌，学习，敲代码<br>
+					格言：当你停下来是，人家还在前进，<br>所以你不能松懈，加油！！
+					<br><br><br><br><br>
+					<font id="time">当前时间：</font><br>
+					网站访问次数：<font id="cishu">0</font> <br>
+				</p>
+			</div>
+			
+			<div class="article-2">
+
+				<div class="article-2-1">
+					大家好，我叫杨光辉，欢迎你来到我的个人网站
+				</div>
+				<div class="article-2-2">
+					<ul class="ul1">
+						<li class="li1  cur"><img src="image/a1.jpg"></li>
+						<li class="li1"><img src="image/a2.jpg"></li>
+						<li class="li1"><img src="image/a3.jpg"></li>
+						<li class="li1"><img src="image/a4.jpg"></li>
+						<li class="li1"><img src="image/5.jpg"></li>
+						<li class="li1"><img src="image/6.jpg"></li>
+					</ul>
+					<ul class="ul2">
+						<li class="li2 cur"></li>
+						<li class="li2"></li>
+						<li class="li2"></li>
+						<li class="li2"></li>
+						<li class="li2"></li>
+						<li class="li2"></li>
+					</ul>
+				</div>
+
+			</div>	
+		</div>
+	
+<div class="footer">
+			<p>版权所有@班级：19计算机一班</p><br>
+			<p>姓名：杨光辉</p><br>
+			<p>学号：198390460</p><br>
+			
+			<hr style="width: auto;" />
+			
+		</div>
+	</body>
+</html>
