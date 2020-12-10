@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("#btn2").click(function () {
+                var a = confirm("请点击取消同意我辞职哈")
+                var b = confirm("你想留我就给我长工资吧")
+                var c = confirm("要不然你还是同意沃辞职吧")
+                var d = confirm("反正我就要辞职")
+                var e = confirm("领导，你想怎么着，绑架我吗")
+                var f = confirm("点击取消把我开除吧，你会遇到等好的")
+                var f = confirm("别开除我的，给我涨工资就行啦")
+                $("div:hidden").show();
+
+                $(".content").hide()
+
+            })
+
+
+
+            $("#btn1").click(function () {
+                var a = confirm("真要把我辞掉吗，我在给您开玩笑的呀，哈哈");
+
+
+            })
+
+
+
+
+
+
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div class="content">
+            <h1>辞职申请</h1>
+            <p>亲爱的领导，因工资太低，我要跳槽，请你批准</p>
+            <button id="btn1">同意</button>
+            <button id="btn2">不同意</button>
+        </div>
+
+        <div class="c2">
+            <h2>你是真的狗呀</h2>
+            <img src="../11.jpeg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

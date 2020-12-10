@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  width: 600px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: silver;
+  text-align: center;
+  padding-top: 20px;
+  line-height: 110px;
+}
+h1 {
+  color: tomato;
+}
+p {
+  font-size: 20px;
+}
+button {
+  width: 60px;
+  height: 40px;
+}
+div:nth-child(2) {
+  width: 700px;
+  height: 600px;
+  text-align: center;
+  padding-top: 20px;
+  line-height: 100px;
+  margin: 0 auto;
+  background-color: tomato;
+  display: none;
+}
+h2 {
+  font-size: 50px;
+}
+img {
+  height: 300px;
+  width: 400px;
+}
